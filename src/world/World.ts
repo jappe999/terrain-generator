@@ -2,12 +2,13 @@ import { Container } from "pixi.js";
 import Tile from "../entity/Tile";
 
 export default class World extends Container {
-    public static tileSize: number = 10;
+    public static scale: number = 0.5;
+    public static tileSize: number = 5;
     public static get height() {
-        return Math.round(document.body.clientHeight / this.tileSize);
+        return Math.round((document.body.clientHeight / this.tileSize) * this.scale);
     }
     public static get width() {
-        return Math.round(document.body.clientWidth / this.tileSize);
+        return Math.round((document.body.clientWidth / this.tileSize) * this.scale);
     }
 
     public debug = true;
