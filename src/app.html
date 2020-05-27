@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <style>
+            body {
+                background-color: #242f31;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            #app-container {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .options {
+                width: 368px;
+                position: fixed;
+                top: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                margin: 16px;
+                padding: 8px 16px;
+                color: white;
+                background-color: #242f31;
+                border-radius: 3px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                z-index: 10;
+            }
+
+            button {
+                width: 100%;
+                padding: 0.75rem 1.5rem;
+                border: none;
+                color: white;
+                background-color: #1ab188;
+                cursor: pointer;
+            }
+
+            li:nth-child(even) button,
+            button:nth-child(even) {
+                background-color: #147c61;
+            }
+
+            button[type="reset"] {
+                background-color: red;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                margin: -8px -16px;
+                padding: 16px;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            ul li {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app-container"></div>
+
+        <div class="options">
+            <div class="container">
+                <button data-generate="world">Generate world</button>
+            </div>
+
+            <div class="container">
+                <label class="container">
+                    <strong>ElevationDeepOceanThreshold</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="ElevationDeepOceanThreshold" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>ElevationSeaLevelThreshold</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="ElevationSeaLevelThreshold" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>ElevationMountainThreshold</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="ElevationMountainThreshold" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>MoistureVolcanoThreshold</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="MoistureVolcanoThreshold" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>MoistureMountainThreshold</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="MoistureMountainThreshold" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>MoistureGrassThreshold</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="MoistureGrassThreshold" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>MoistureForestThreshold</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="MoistureForestThreshold" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>elevationPower</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="elevationPower" />
+                    <span data-value></span>
+                </label>
+                <label class="container">
+                    <strong>moisturePower</strong>
+                    <input type="range" min="-2" max="3" step="0.001" data-type="moisturePower" />
+                    <span data-value></span>
+                </label>
+            </div>
+
+            <div class="container">
+                <button data-copy>Copy</button>
+            </div>
+        </div>
+    </body>
+</html>
